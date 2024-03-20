@@ -329,17 +329,15 @@ namespace Lab3 {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		int a, i=1, d = 1;
+		int a, i = 1, d = 1;
 		srand(time(0));
-		do
-		{
-			a = rand() % 21 - 20;
+		do {
+			a = rand() % 100;
 			richTextBox1->AppendText(Convert::ToString(a) + "\r\n");
 			i++;
-			do
-			{
-			d *= a;			
-			} while ((a % 5) == 0);			
+			if ((a % 5) != 0) {
+				d *= a;
+			}
 		} while (i <= 7);
 		label1->Text = Convert::ToString(d);
 	}
